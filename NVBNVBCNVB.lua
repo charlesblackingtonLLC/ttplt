@@ -176,7 +176,7 @@ function library:addTab(name)
         local group = {}
         function group:addToggle(args)
             if not args.flag and args.text then args.flag = args.text end
-            if not args.flag then return warn("⚠️ incorrect arguments ⚠️ - missing args on recent toggle") end
+            if not args.flag then return end
             groupbox.Size += UDim2.new(0, 0, 0, 20)
 
             local toggleframe = Instance.new("Frame")
