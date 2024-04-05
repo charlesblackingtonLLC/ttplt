@@ -31,6 +31,7 @@ end
 function Library:CreateWindow(title, name, color)
     title = title or "Bracket Lib V2"
     color = color and Library:GetColor(color) or Color3.fromRGB(19, 119, 255)
+    name = name or title
 
     -- Window Main
     local WinTypes = {}
@@ -52,7 +53,7 @@ function Library:CreateWindow(title, name, color)
     local container = Instance.new("Frame")
 
     -- Window Properties
-    BracketV2.Name = Name
+    BracketV2.Name = name
     BracketV2.Parent = game.CoreGui
     BracketV2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
