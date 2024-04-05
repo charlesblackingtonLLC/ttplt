@@ -28,7 +28,7 @@ function Library:GetSide(LeftSize, RightSize)
     end
 end
 
-function Library:CreateWindow(title, color, name)
+function Library:CreateWindow(title, name, color)
     title = title or "Bracket Lib V2"
     color = color and Library:GetColor(color) or Color3.fromRGB(19, 119, 255)
 
