@@ -167,8 +167,10 @@ function Library:CreateWindow(title, name, color)
             end
         end
     end)
-    while BracketV2.Enabled and wait() do
-        print('pp')
+    while true and wait(0.1) do
+        if BracketV2.Enabled then
+            UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+        end
     end
 
     -- Window Types
