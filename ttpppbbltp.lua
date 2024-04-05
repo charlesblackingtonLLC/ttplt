@@ -1,6 +1,8 @@
 -- ui lib
 local Library = {}
 
+local UserInputService = game:GetService("UserInputService")
+
 function Library:GetColor(color, table)
     table = table or false
     if (color.R == nil) then return Color3.fromRGB(19, 119, 255) end
@@ -165,6 +167,9 @@ function Library:CreateWindow(title, name, color)
             end
         end
     end)
+    while BracketV2.Enabled and wait() do
+        print('pp')
+    end
 
     -- Window Types
     function WinTypes:Destroy()
