@@ -160,18 +160,19 @@ function Library:CreateWindow(title, name, color)
         if (cancbind) then
             if (input.KeyCode == Enum.KeyCode[keybind]) then
                 BracketV2.Enabled = not BracketV2.Enabled
+                if BracketV2.Enabled == true then
+                    UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+                end
             end
         else
             if (input.KeyCode == Enum.KeyCode.RightControl) then
                 BracketV2.Enabled = not BracketV2.Enabled
+                if BracketV2.Enabled == true then
+                    UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+                end
             end
         end
     end)
-    while true and wait(0.1) do
-        if BracketV2.Enabled then
-            UserInputService.MouseBehavior = Enum.MouseBehavior.Default
-        end
-    end
 
     -- Window Types
     function WinTypes:Destroy()
@@ -190,6 +191,7 @@ function Library:CreateWindow(title, name, color)
     function WinTypes:CreateTab(name, players)
         name = name or "NewTab"
         players = players or false
+        
 
         -- Tab Main
         local TabTypes = {}
@@ -889,6 +891,7 @@ function Library:CreateWindow(title, name, color)
 
                 return DropTypes
             end
+            
 
             function GroupTypes:CreateButton(name, callback)
                 name = name or "New Button"
@@ -1495,6 +1498,9 @@ function Library:CreateWindow(title, name, color)
     end
 
     return WinTypes, BracketV2
+    
 end
+
+
 
 return Library
